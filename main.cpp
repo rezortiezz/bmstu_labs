@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-typedef double (*TPF)(double); // TFP == double (*)(double) (указатель на подынтегральную функцию)
+typedef double (*TPF)(double); // TPF == double (*)(double) (указатель на подынтегральную функцию)
 
 
 double IntRect(double a, double b, double eps, int& n)
