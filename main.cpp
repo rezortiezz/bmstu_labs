@@ -14,6 +14,7 @@
 
 typedef double (*TPF)(double); // TPF == double (*)(double) (указатель на подынтегральную функцию)
 
+//qwe
 
 double IntRect(double a, double b, double eps, int& n)
 {
