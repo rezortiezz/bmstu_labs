@@ -62,7 +62,6 @@ void night_switch(int hour, int min)
     }
 }
 
-
 void morning_switch(int hour, int min)
 {
     if (min >= 20 || min <= 10)
