@@ -7,8 +7,7 @@ bool check(int h, int m) {return h > 23 || m > 59 ? false : true;}
 
 void print_info(int sec, int hour, int min)
 {
-    if (sec > 24 * 3600 - 1) printf("incorrect input");
-    else if (sec % HOUR == 0)
+    if (sec % HOUR == 0)
     {
         if (sec == 0) printf("Полночь.\n");
         else if (sec == HOUR) printf("Час ночи ровно.\n");
@@ -34,8 +33,8 @@ int main()
 {
     unsigned int get_h, get_m;
     scanf("%d %d", &get_h, &get_m);
-
     unsigned int totalsec = 0;
+    
     if (check(get_h, get_m))
     {
         totalsec = get_h * 3600 + get_m * 60;
