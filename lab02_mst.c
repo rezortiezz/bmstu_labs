@@ -21,7 +21,7 @@ int print_info(int hour, int min)
         else if (2 <= min % 10 && min % 10 <= 4) printf("%d %s", min,  (min <= 20 ? "минут" : "минуты"));
         else printf("%d минут", min);
 
-        if (0 < hour && hour < 5) printf(" ночи.\n"); 
+        if (0 <= hour && hour < 5) printf(" ночи.\n"); 
         else if (5 <= hour && hour < 12) printf(" утра.\n");
         else if (12 <= hour && hour < 18) printf(" дня.\n");
         else printf(" вечера\n");
@@ -33,6 +33,6 @@ int main()
 {
     unsigned int get_h, get_m;
     scanf("%d %d", &get_h, &get_m);
-    (get_h <= 23 && get_m <= 59) ? print_info(get_h, get_m) : printf("incorrect input");
+    (get_h <= 23 && get_m <= 59) ? print_info(get_h, get_m) : printf("incorrect input\n");
     return 0;
 }
