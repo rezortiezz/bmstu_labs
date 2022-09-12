@@ -4,3 +4,5 @@ sometimes there will be labs that i have to do beacause of my university's work 
 
 05.09.22 added lab02 without documentation, works properly
 clock converter: converts hh mm format to alphabetic format.
+
+12.09.22 added lab03 no docs. im not sure if it works properly but i hope so. default for cycles practise
