@@ -40,10 +40,14 @@ int main()
         std::cin >> n;
         double cur = 1;
         for (int i = 1; i <= n; i++)
-        {
+        {   
             cur /= rowm_ex4(i);
+            if (n == 3 || n == 5 || n == 10)
+            {
+                printf("i: %d cur: %1.12f\n", i, cur);
+            }
         }
-        std::cout << cur << std::endl;
+        printf("%1.12f\n", cur);
     }
 
 
