@@ -1,21 +1,12 @@
 #include <cmath>
 
-double f(double x)
+double f(double x, int k)
 {
-    return x - cos(x); // -1 <= cos(x) <= 1 => -1 <= x <= 1
+    return x - k * cos(x); // -1 <= cos(x) <= 1 => -1 <= x <= 1
 }
 
-double f1(double x)
+double f_der(double x, int k)
 {
-    return x - 10*cos(x);  // -10 <= 10*cos(x) <= 10 => -10 <= x <= 10
+    return 1 + k * sin(x);  // f'(x) = (x - cos(x))' = 1 +  k *sin(x)
 }
 
-double f_der(double x)
-{
-    return 1 + sin(x);  // f'(x) = (x - cos(x))' = 1 + sin(x)
-}
-
-double f1_der(double x)
-{
-    return 1 + 10 * sin(x); //(x - 10cos(x))' = 1 + 10sin(x)
-}
