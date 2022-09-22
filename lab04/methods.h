@@ -1,3 +1,5 @@
+#include <iomanip>
+
 void iterative(double (*f_cur)(double, int), double EPS, double x_0, int k)
 {   
     std::cout << "iterative method: x = ";
@@ -7,8 +9,8 @@ void iterative(double (*f_cur)(double, int), double EPS, double x_0, int k)
         counter++;
         x_0 = x_0 - f_cur(x_0, k);
     }
-
-    std::cout << x_0 << "; number of iterations: " << counter << std::endl;
+    if (EPS == 1e-6) std::cout << std::setprecision(6) << x_0 << "; number of iterations: " << counter << std::endl;
+    else std::cout << std::setprecision(8) << x_0 << "; number of iterations: " << counter << std::endl;
 }
 
 void binary_search(double (*f_cur)(double, int), double EPS, double lx, double rx, int k)
@@ -39,5 +41,5 @@ void newtons(double (*f_cur)(double, int), double (*f_der_cur)(double, int), dou
         counter++;
         x_0 = x_0 - (f_cur(x_0, k)/f_der_cur(x_0, k));
     } 
-    std::cout << "Newton's method: x = " << x_0 << "; number of iterations: " << counter << std::endl;
+    std::cout << "newton's method: x = " << x_0 << "; number of iterations: " << counter << std::endl;
 }
