@@ -13,9 +13,6 @@ double row_member(int, double);
 double rec_factorial(double);
 double y(double);
 
-double ex4(int);
-double rowm_ex4(double);
-
 int main()
 {   // unsigned int n, m;
     // char inp;
@@ -26,8 +23,8 @@ int main()
     //     std::cin >> inp;
     // } while (inp != 'n');
     
-    double a; std::cin >> a;
-    std::cout << ex2(a) << std::endl;
+    //double a; std::cin >> a;
+    //std::cout << ex2(a) << std::endl;
 
     // double x = 0.0;
     // double delta = 0.2;
@@ -40,20 +37,20 @@ int main()
     //     std::cout << x << "\t" << y(x) << "\t" << temp.first << "\t" << temp.second << "\t\n";
     // } 
 
-    /*unsigned int n;
+    unsigned int n;
     while (true) {
         std::cin >> n;
-        double cur = 1;
-        for (int i = 1; i <= n; i++)
-        {   
-            cur /= rowm_ex4(i);
-            if (n == 3 || n == 5 || n == 10)
+        double cur = 0;
+        for (double i = n; i > 0; i--)
+        {
+            cur = 1/(cur + (2*i + 1));
+            if (i == 3 || i == 5 || i == 10)
             {
-                printf("i: %d cur: %1.10f\n", i, cur);
+                printf("i: %1.0f cur: %1.10f\n", i, cur);
             }
         }
-        printf("%1.10f\n", cur);
-    }*/
+        std::cout << "res: " << cur << std::endl;
+    }
 
 
     return 0;
@@ -116,9 +113,4 @@ std::pair<double, int> row_sum(double x, double eps, double delta) {
 double y(double x)
 {
     return (1 + pow(2.0 * x, 2)) * exp(pow(x, 2.0));
-}
-
-double rowm_ex4(double n)
-{
-    return 2 * n + 1;
 }
