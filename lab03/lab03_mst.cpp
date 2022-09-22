@@ -6,7 +6,7 @@
 
 unsigned int ex1(int, int);
 
-long int ex2(double);
+long double ex2(double);
 
 std::pair<double, int> row_sum(double, double, double);
 double row_member(int, double);
@@ -17,17 +17,17 @@ double ex4(int);
 double rowm_ex4(double);
 
 int main()
-{   unsigned int n, m;
-    char inp;
-    do {
-        std::cin >> n >> m;
-        std::cout << ex1(m, n) << std::endl;
-        std::cout << "Продолжить работу?(y/n)" << std::endl;
-        std::cin >> inp;
-    } while (inp != 'n');
+{   // unsigned int n, m;
+    // char inp;
+    // do {
+    //     std::cin >> n >> m;
+    //     std::cout << ex1(m, n) << std::endl;
+    //     std::cout << "Продолжить работу?(y/n)" << std::endl;
+    //     std::cin >> inp;
+    // } while (inp != 'n');
     
-    //double a; std::cin >> a;
-    //ex2(a);
+    double a; std::cin >> a;
+    std::cout << ex2(a) << std::endl;
 
     // double x = 0.0;
     // double delta = 0.2;
@@ -69,17 +69,17 @@ unsigned int ex1(int m, int n)
     return counter;
 }
 
-long int ex2(double a)
+long double ex2(double a)
 {
     long double s = 1;
     if (a >= 0) {
-        for (int i = 2; i <= 8; i++)
+        for (double i = 2.0; i <= 8.0; i++)
         {
             s *= i*i;
         }
         return s - a;
     } else {
-        for (int i = 3; i<= 9; i++)
+        for (double i = 3.0; i<= 9.0; i++)
         {
             s *= (i - 2);
         } 
