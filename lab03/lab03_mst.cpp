@@ -22,31 +22,31 @@ int main(){
     // double a; std::cin >> a;
     // std::cout << ex2(a) << std::endl;
 
-    double x = 0.0;
-    double delta = 0.2;
-    double eps = 1e-6;
-    std::pair<double, int> temp;
-    std::cout << "x\tY(x)\tS(x)\tN\n";
-    for (;x <= 1; x += delta)
-    {
-        temp = row_sum(x, eps);
-        std::cout << x << "\t" << y(x) << "\t" << temp.first << "\t" << temp.second << "\t\n";
-    } 
+    // double x = 0.0;
+    // double delta = 0.2;
+    // double eps = 1e-6;
+    // std::pair<double, int> temp;
+    // std::cout << "x\t\tY(x)\t\t\tS(x)\t\t\tN\n\n";
+    // for (;x <= 1; x += delta)
+    // {
+    //     temp = row_sum(x, eps);
+    //     printf("%1.1f\t\t%1.6f\t\t%1.6f\t\t%d\n", x, y(x), temp.first, temp.second);
+    // } 
 
-    // unsigned int n;
-    // while (true) {
-    //     std::cin >> n;
-    //     double cur = 0;
-    //     for (double i = n; i > 0; i--)
-    //     {
-    //         cur = 1/(cur + (2*i + 1));
-    //         if (i == 3 || i == 5 || i == 10)
-    //         {
-    //             printf("i: %1.0f cur: %1.10f\n", i, cur);
-    //         }
-    //     }
-    //     std::cout << "res: " << cur << std::endl;
-    // }
+    unsigned int n;
+    while (true) {
+        std::cin >> n;
+        double cur = 0;
+        for (double i = n; i > 0; i--)
+        {
+            cur = 1/(cur + (2*i + 1));
+            if (i == 3 || i == 5 || i == 10)
+            {
+                printf("i: %1.0f cur: %1.10f\n", i, cur);
+            }
+        }
+        std::cout << "res: " << cur << std::endl;
+    }
 
     return 0;
 }
