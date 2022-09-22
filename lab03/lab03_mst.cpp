@@ -3,9 +3,7 @@
 #include <utility>
 
 unsigned int ex1(int, int);
-
 long double ex2(double);
-
 std::pair<double, int> row_sum(double, double);
 double row_member(int, double);
 double rec_factorial(double);
@@ -50,7 +48,6 @@ int main(){
     //     std::cout << "res: " << cur << std::endl;
     // }
 
-
     return 0;
 }
 
@@ -77,31 +74,22 @@ long double ex2(double a)
     }
 }
 
-double rec_factorial(double r)
-{
-    return (r > 1) ? r * rec_factorial(r - 1) : 1;
-}
+double rec_factorial(double r) { return (r > 1) ? r * rec_factorial(r - 1) : 1;}
 
-double row_member(int n, double x)
-{
-    return ((2 * n + 1)/rec_factorial(n)) * pow(x, 2*n);
-}
+double row_member(int n, double x){ return ((2 * n + 1)/rec_factorial(n)) * pow(x, 2*n);}
+
+double y(double x) { return (1 + 2 * x * x) * exp(x * x);}
 
 std::pair<double, int> row_sum(double x, double eps) {
-    double sum = 1;
-    double current_member = 1;
+    double sum = 1, current_member = 1;
     std::pair<double, int> returnable;
-    for (int n = 1; current_member > eps; n++)
+    int n = 1;
+    for (; current_member > eps; n++)
     {
         current_member = row_member(n, x);  
         sum += current_member;
-        returnable.second = n;
     }
     returnable.first = sum;
+    returnable.second = n;
     return returnable;
-}
-
-double y(double x)
-{
-    return (1 + 2 * x * x) * exp(x * x);
 }
