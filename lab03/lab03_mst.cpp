@@ -6,7 +6,7 @@
 
 unsigned int ex1(int, int);
 
-long int ex2(int);
+long int ex2(double);
 
 std::pair<double, int> row_sum(double, double, double);
 double row_member(int, double);
@@ -26,7 +26,7 @@ int main()
         std::cin >> inp;
     } while (inp != 'n');
     
-    //int a; std::cin >> a;
+    //double a; std::cin >> a;
     //ex2(a);
 
     // double x = 0.0;
@@ -69,21 +69,22 @@ unsigned int ex1(int m, int n)
     return counter;
 }
 
-long int ex2(int a)
+long int ex2(double a)
 {
-    long int s = 1;
+    long double s = 1;
     if (a >= 0) {
         for (int i = 2; i <= 8; i++)
         {
-            s *= i*i - a;
+            s *= i*i;
         }
+        return s - a;
     } else {
         for (int i = 3; i<= 9; i++)
         {
             s *= (i - 2);
-        }
+        } 
+        return s;
     }
-    return s;
 }
 
 double rec_factorial(double r)
