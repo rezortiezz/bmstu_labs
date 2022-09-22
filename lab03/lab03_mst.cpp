@@ -6,7 +6,7 @@ unsigned int ex1(int, int);
 
 long double ex2(double);
 
-std::pair<double, int> row_sum(double, double, double);
+std::pair<double, int> row_sum(double, double);
 double row_member(int, double);
 double rec_factorial(double);
 double y(double);
@@ -31,7 +31,7 @@ int main(){
     std::cout << "x\tY(x)\tS(x)\tN\n";
     for (;x <= 1; x += delta)
     {
-        temp = row_sum(x, eps, delta);
+        temp = row_sum(x, eps);
         std::cout << x << "\t" << y(x) << "\t" << temp.first << "\t" << temp.second << "\t\n";
     } 
 
@@ -87,7 +87,7 @@ double row_member(int n, double x)
     return ((2 * n + 1)/rec_factorial(n)) * pow(x, 2*n);
 }
 
-std::pair<double, int> row_sum(double x, double eps, double delta) {
+std::pair<double, int> row_sum(double x, double eps) {
     double sum = 1;
     double current_member = 1;
     std::pair<double, int> returnable;
