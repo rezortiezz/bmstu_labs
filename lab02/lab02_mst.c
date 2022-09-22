@@ -10,7 +10,8 @@ int print_info(int hour, int min)
         else if (hour >= 2 && hour <= 4 ) printf("%d часа ночи ровно.\n", hour);
         else if (hour >= 5 && hour < 12) printf("%d часов утра ровно.\n", hour);
         else if (hour == 13) printf("Час дня ровно.\n");
-        else if (hour > 13 && hour <= 17) printf("%d часа дня ровно.\n", hour - 12);
+        else if (hour > 13 && hour < 17) printf("%d часа дня ровно.\n", hour - 12);
+        else if (hour == 17) printf("5 часов дня ровно.\n");
         else if (hour >= 18 && hour <= 23) printf("%d часов вечера ровно.\n", hour - 12);
     } else {
         if ((hour > 12 ? hour - 12 : hour) == 1) printf("%d час ", hour > 12 ? hour - 12 : hour);
@@ -32,7 +33,10 @@ int print_info(int hour, int min)
 int main()
 {
     unsigned int get_h, get_m;
-    scanf("%d %d", &get_h, &get_m);
-    (get_h <= 23 && get_m <= 59) ? print_info(get_h, get_m) : printf("incorrect input\n");
+    while (1)
+    {
+        scanf("%d %d", &get_h, &get_m);
+        (get_h <= 23 && get_m <= 59) ? print_info(get_h, get_m) : printf("Введены неверные данные\n");
+    }
     return 0;
 }
