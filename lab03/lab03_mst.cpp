@@ -91,7 +91,6 @@ std::pair<double, int> row_sum(double x, double eps, double delta) {
     double sum = 1;
     double current_member = 1;
     std::pair<double, int> returnable;
-    unsigned int maxIterCount = 1000;
     for (int n = 1; current_member > eps; n++)
     {
         current_member = row_member(n, x);  
