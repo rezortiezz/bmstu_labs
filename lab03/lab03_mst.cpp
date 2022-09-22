@@ -17,7 +17,7 @@ double ex4(int);
 double rowm_ex4(double);
 
 int main()
-{   int n, m;
+{   unsigned int n, m;
     char inp;
     do {
         std::cin >> n >> m;
