@@ -17,25 +17,30 @@ double ex4(int);
 double rowm_ex4(double);
 
 int main()
-{   /*int m, n;
-    std::cin >> n >> m;
-    ex1(m, n);
+{   int n, m;
+    char inp;
+    do {
+        std::cin >> n >> m;
+        std::cout << ex1(m, n) << std::endl;
+        std::cout << "Продолжить работу?(y/n)" << std::endl;
+        std::cin >> inp;
+    } while (inp != 'n');
+    
+    //int a; std::cin >> a;
+    //ex2(a);
 
-    int a; std::cin >> a;
-    ex2(a);*/
+    // double x = 0.0;
+    // double delta = 0.2;
+    // double eps = 1e-6;
+    // std::pair<double, int> temp;
+    // std::cout << "x\tY(x)\tS(x)\tN\n";
+    // for (;x <= 1; x += delta)
+    // {
+    //     temp = row_sum(x, eps, delta);
+    //     std::cout << x << "\t" << y(x) << "\t" << temp.first << "\t" << temp.second << "\t\n";
+    // } 
 
-    /*double x = 0.0;
-    double delta = 0.2;
-    double eps = 1e-6;
-    std::pair<double, int> temp;
-    std::cout << "x\tY(x)\tS(x)\tN\n";
-    for (;x <= 1; x += delta)
-    {
-        temp = row_sum(x, eps, delta);
-        std::cout << x << "\t" << y(x) << "\t" << temp.first << "\t" << temp.second << "\t\n";
-    } */
-
-    unsigned int n;
+    /*unsigned int n;
     while (true) {
         std::cin >> n;
         double cur = 1;
@@ -44,11 +49,11 @@ int main()
             cur /= rowm_ex4(i);
             if (n == 3 || n == 5 || n == 10)
             {
-                printf("i: %d cur: %1.12f\n", i, cur);
+                printf("i: %d cur: %1.10f\n", i, cur);
             }
         }
-        printf("%1.12f\n", cur);
-    }
+        printf("%1.10f\n", cur);
+    }*/
 
 
     return 0;
@@ -83,7 +88,7 @@ long int ex2(int a)
 
 double rec_factorial(double r)
 {
-    return r > 1 ? r * rec_factorial(r - 1) : 1;
+    return (r > 1) ? r * rec_factorial(r - 1) : 1;
 }
 
 double row_member(int n, double x)
@@ -93,17 +98,13 @@ double row_member(int n, double x)
 
 std::pair<double, int> row_sum(double x, double eps, double delta) {
     double sum = 1;
+    double current_member = 1;
     std::pair<double, int> returnable;
     unsigned int maxIterCount = 1000;
-    for (int n = 1; row_member(n,x) > eps; n++)
+    for (int n = 1; current_member > eps; n++)
     {
-        sum += row_member(n, x);
-        if (n > maxIterCount)
-        {
-            returnable.first = sum;
-            returnable.second = n;
-            return returnable;
-        }
+        current_member = row_member(n, x);  
+        sum += current_member;
         returnable.second = n;
     }
     returnable.first = sum;
